@@ -6,35 +6,48 @@ generator client {
 }
 
 datasource db {
-  provider = "mongodb"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model User {
-  id String @id @default(auto()) @map("_id") @ db.ObjectId
-  email String @unique
-  password String
-  name String
-  photo String
-  bio String
-  posts Post[]
+  id      Int      @id @default(autoincrement())
+  email   String   @unique
+  name    String?
+  posts   Post[]
+  comments   Comment[]
+  profile Profile?
   createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Profile {
+  id     Int     @id @default(autoincrement())
+  bio    String?
+  picture String
+  user   User    @relation(fields: [userId], references: [id])
+  userId Int     @unique
 }
 
 model Post {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-  slug String @unique
-  title String
-  body String
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  title     String   @db.VarChar(255)
+  content   String?
   comments Comment[]
-  author User @relation(fields: [authorId], references: [id])
-  authorId String @db.ObjectId
+  published Boolean  @default(false)
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  Int
 }
 
 model Comment {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
+  id        Int      @id @default(autoincrement())
   post Post @relation(fields: [postId], references: [id])
-  postId String @db.ObjectId
+  postId Int
+  commenter User @relation(fields: [commenterId], references: [id])
+  commenterId  Int
   comment String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
