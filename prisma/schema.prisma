@@ -11,10 +11,30 @@ datasource db {
 }
 
 model User {
-  id Int @id @default(autoincrement())
+  id String @id @default(auto()) @map("_id") @ db.ObjectId
   email String @unique
   password String
   name String
-  photo String?
+  photo String
   bio String
+  posts Post[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+}
+
+model Post {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  slug String @unique
+  title String
+  body String
+  comments Comment[]
+  author User @relation(fields: [authorId], references: [id])
+  authorId String @db.ObjectId
+}
+
+model Comment {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  post Post @relation(fields: [postId], references: [id])
+  postId String @db.ObjectId
+  comment String
 }
