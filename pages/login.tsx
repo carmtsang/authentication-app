@@ -1,6 +1,7 @@
 import { LockClosedIcon } from "@heroicons/react/20/solid";
 import Head from "next/head";
 import Image from "next/image";
+import Input from "../components/Input";
 
 export default function Login() {
   return (
@@ -22,8 +23,8 @@ export default function Login() {
                 height={300}
               /> */}
 
-                <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
-                  Sign in to your account
+                <h2 className="mt-3 text-2xl tracking-tight text-gray-900">
+                  Login
                 </h2>
                 <p className="mt-2 text-center text-sm text-gray-600">
                   Or{" "}
@@ -43,29 +44,15 @@ export default function Login() {
                     <label htmlFor="email-address" className="sr-only">
                       Email address
                     </label>
-                    <input
-                      id="email-address"
-                      name="email"
-                      type="email"
-                      autoComplete="email"
-                      required
-                      className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                      placeholder="Email address"
-                    />
+
+                    <Input type="email" placeholder="Email Address" />
                   </div>
                   <div>
                     <label htmlFor="password" className="sr-only">
                       Password
                     </label>
-                    <input
-                      id="password"
-                      name="password"
-                      type="password"
-                      autoComplete="current-password"
-                      required
-                      className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                      placeholder="Password"
-                    />
+
+                    <Input type="password" placeholder="Password" />
                   </div>
                 </div>
 
