@@ -2,6 +2,7 @@ import { LockClosedIcon } from "@heroicons/react/20/solid";
 import Head from "next/head";
 import Image from "next/image";
 import Input from "../components/Input";
+import InputLabel from "../components/InputLabel";
 
 export default function Login() {
   return (
@@ -26,32 +27,18 @@ export default function Login() {
                 <h2 className="mt-3 text-2xl tracking-tight text-gray-900">
                   Login
                 </h2>
-                <p className="mt-2 text-center text-sm text-gray-600">
-                  Or{" "}
-                  <a
-                    href="#"
-                    className="font-medium text-indigo-600 hover:text-indigo-500"
-                  >
-                    start your 14-day free trial
-                  </a>
-                </p>
+                <p className="mt-2 text-center text-sm text-gray-600"></p>
               </div>
 
               <form className="mt-8 space-y-6" action="#" method="POST">
                 <input type="hidden" name="remember" defaultValue="true" />
                 <div className="-space-y-px rounded-md shadow-sm">
                   <div>
-                    <label htmlFor="email-address" className="sr-only">
-                      Email address
-                    </label>
-
+                    <InputLabel type="email">Email</InputLabel>
                     <Input type="email" placeholder="Email Address" />
                   </div>
                   <div>
-                    <label htmlFor="password" className="sr-only">
-                      Password
-                    </label>
-
+                    <InputLabel type="password">Password</InputLabel>
                     <Input type="password" placeholder="Password" />
                   </div>
                 </div>
