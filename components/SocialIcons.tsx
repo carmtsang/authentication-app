@@ -33,15 +33,15 @@ const SOCIAL = [
 const SocialIcons = () => {
   const social = SOCIAL.map((social) => {
     return (
-      <li key={social.id}>
+      <li className="inline-block  p-4" key={social.id}>
         <Link href={social.link}>
-          <FontAwesomeIcon icon={social.icon} />
+          <FontAwesomeIcon icon={social.icon} size="3x" />
         </Link>
       </li>
     );
   });
 
-  return <ul>{social}</ul>;
+  return <ul className="list-none">{social}</ul>;
 };
 
 export default SocialIcons;

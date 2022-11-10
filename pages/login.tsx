@@ -48,7 +48,7 @@ export default function Login() {
 
             <div className="flex-row text-center items-center mt-5 text-sm text-gray-500">
               <p>or continue with these social profile</p>
-              <div className="flex">
+              <div className="flex justify-center pt-4">
                 <SocialIcons />
               </div>
 
