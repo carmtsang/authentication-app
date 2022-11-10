@@ -3,9 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Input from "../components/Input";
 import InputLabel from "../components/InputLabel";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+import SocialIcons from "../components/SocialIcons";
 
 export default function Login() {
   return (
@@ -50,9 +48,8 @@ export default function Login() {
 
             <div className="flex-row text-center items-center mt-5 text-sm text-gray-500">
               <p>or continue with these social profile</p>
-              <div>
-                <FontAwesomeIcon icon={faFacebook} />
-                <p>social icons go here</p>
+              <div className="flex">
+                <SocialIcons />
               </div>
 
               <div className="flex justify-center mt-7 ">
