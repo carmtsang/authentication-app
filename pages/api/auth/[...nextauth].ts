@@ -1,13 +1,18 @@
 import NextAuth from "next-auth/next";
 import GithubProvider from "next-auth/providers/github";
+import TwitterProvider from "next-auth/providers/twitter";
 
-export default NextAuth({
+export const authOptions = {
   providers: [
     GithubProvider({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
-      scope: "read:user",
+    }),
+    TwitterProvider({
+      clientId: process.env.TWITTER_ID,
+      clientSecret: process.env.TWITTER_SECRET,
     }),
   ],
-  database: process.env.DATABASE_URL,
-});
+};
+
+export default NextAuth(authOptions);
