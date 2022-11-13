@@ -21,12 +21,12 @@ export default function Home() {
           {session && (
             <>
               <h1>Welcome, {session.user.name ?? session.user.email}!</h1>
-              <Image
+              {/* <Image
                 src={session.user.image}
                 alt="user image"
                 width="300"
                 height="300"
-              />
+              /> */}
             </>
           )}
           {!session && (
