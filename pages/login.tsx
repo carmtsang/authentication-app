@@ -65,5 +65,3 @@ export default function Login() {
     </div>
   );
 }
-
-// https://blog.logrocket.com/implementing-user-authorization-next-js/
