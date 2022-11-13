@@ -4,7 +4,7 @@ import TwitterProvider from "next-auth/providers/twitter";
 import FacebookProvider from "next-auth/providers/facebook";
 import GoogleProvider from "next-auth/providers/google";
 
-export const authOptions = {
+export default NextAuth({
   providers: [
     GithubProvider({
       clientId: process.env.GITHUB_ID,
@@ -23,6 +23,9 @@ export const authOptions = {
       clientSecret: process.env.GOOGLE_SECRET,
     }),
   ],
-};
-
-export default NextAuth(authOptions);
+  callbacks: {
+    session({ session, token, user }) {
+      return session;
+    },
+  },
+});
