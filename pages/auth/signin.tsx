@@ -1,11 +1,15 @@
-import { LockClosedIcon } from "@heroicons/react/20/solid";
+import {
+  getProviders,
+  signIn,
+  getSession,
+  getCsrfToken,
+} from "next-auth/react";
 import Head from "next/head";
-import Image from "next/image";
-import Input from "../components/Input";
-import InputLabel from "../components/InputLabel";
-import SocialIcons from "../components/SocialIcons";
+import Input from "../../components/Input";
+import InputLabel from "../../components/InputLabel";
+import SocialIcons from "../../components/SocialIcons";
 
-export default function Login() {
+export default function SignIn() {
   return (
     <div>
       <Head>
@@ -64,4 +68,12 @@ export default function Login() {
       </main>
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  return {
+    props: {
+      providers: await getProviders(context),
+    },
+  };
 }
