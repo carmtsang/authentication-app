@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { signIn } from "next-auth/react";
 import {
   faTwitter,
   faFacebook,
@@ -11,22 +12,18 @@ const SOCIAL = [
   {
     id: "facebook",
     icon: faFacebook,
-    link: "/",
   },
   {
     id: "github",
     icon: faGithub,
-    link: "/",
   },
   {
     id: "google",
     icon: faGoogle,
-    link: "/",
   },
   {
     id: "twitter",
     icon: faTwitter,
-    link: "/",
   },
 ];
 
@@ -34,9 +31,9 @@ const SocialIcons = () => {
   const social = SOCIAL.map((social) => {
     return (
       <li className="inline-block  p-4" key={social.id}>
-        <Link href={social.link}>
+        <button onClick={() => signIn(social.id)}>
           <FontAwesomeIcon icon={social.icon} size="3x" />
-        </Link>
+        </button>
       </li>
     );
   });
