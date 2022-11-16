@@ -4,16 +4,4 @@ const nextConfig = {
   swcMinify: true,
 };
 
-module.exports = {
-  nextConfig,
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "githubusercontent.com",
-        port: "",
-        pathname: "/u/**",
-      },
-    ],
-  },
-};
+module.exports = nextConfig;
