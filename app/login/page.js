@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
+import SocialProfile from "../social";
 
 const NO_ACC_MSG = "Don't have an account yet?";
 const REGISTER = "Register";
@@ -59,7 +60,7 @@ export default function Login() {
                 </button>
               </div>
             </form>
-
+            <SocialProfile />
             <p className="mt-10 text-center text-sm text-gray-500">
               {NO_ACC_MSG}{" "}
               <Link
