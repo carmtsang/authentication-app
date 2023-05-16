@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import SocialProfile from "../social";
 
 const MEMBER_MSG = "Already a member?";
 const LOGIN = "Login";
@@ -63,7 +64,7 @@ export default function Register() {
                 </button>
               </div>
             </form>
-
+            <SocialProfile />
             <p className="mt-10 text-center text-sm text-gray-500">
               {MEMBER_MSG}{" "}
               <Link
