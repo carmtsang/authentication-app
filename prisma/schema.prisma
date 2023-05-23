@@ -17,5 +17,7 @@ model User {
   name      String?
   imageURL  String?
   bio       String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
