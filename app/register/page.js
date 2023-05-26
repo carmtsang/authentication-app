@@ -1,5 +1,5 @@
-import SocialProfile from "@/components/Social";
-import Form from "@/components/form";
+import SocialProfile from "@/app/components/Social";
+import Form from "@/app/components/form";
 import Image from "next/image";
 import Link from "next/link";
 

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import Form from "@/components/form";
-import SocialProfile from "@/components/Social";
+import Form from "@/app/components/form";
+import SocialProfile from "@/app/components/Social";
 
 const NO_ACC_MSG = "Don't have an account yet? ";
 const REGISTER = "Register";
